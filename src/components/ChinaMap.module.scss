@@ -101,6 +101,89 @@
   stroke-linejoin: round;
 }
 
+// ── 缩放控件 ──────────────────────────────────────────
+.zoomControls {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  z-index: 8;
+}
+
+.zoomBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 253, 248, 0.92);
+  color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(139, 115, 85, 0.2);
+  transition: transform 0.15s ease, background 0.15s ease;
+  -webkit-tap-highlight-color: transparent;
+
+  &:active {
+    transform: scale(0.9);
+    background: rgba(247, 242, 232, 0.95);
+  }
+
+  &:disabled {
+    color: #c5b8a0;
+    cursor: default;
+    opacity: 0.5;
+  }
+}
+
+.zoomBtnReset {
+  color: $color-secondary;
+  background: rgba(255, 253, 248, 0.95);
+}
+
+// ── 缩放比例指示器 ────────────────────────────────────
+.zoomIndicator {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  padding: 3px 10px;
+  border-radius: 12px;
+  background: rgba(40, 36, 33, 0.7);
+  color: #fffcf7;
+  font-size: 11px;
+  font-weight: $font-weight-medium;
+  z-index: 8;
+  pointer-events: none;
+  backdrop-filter: blur(4px);
+}
+
+// ── 首次引导提示 ──────────────────────────────────────
+.zoomHint {
+  position: absolute;
+  left: 50%;
+  bottom: 14px;
+  transform: translateX(-50%);
+  padding: 5px 14px;
+  border-radius: 16px;
+  background: rgba(185, 71, 61, 0.88);
+  color: #fffcf7;
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  z-index: 8;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: hintPulse 2s ease-in-out infinite;
+  box-shadow: 0 2px 10px rgba(185, 71, 61, 0.3);
+}
+
+@keyframes hintPulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
+}
+
 // ── 无结果遮罩 ────────────────────────────────────────
 .noResult {
   position: absolute;
