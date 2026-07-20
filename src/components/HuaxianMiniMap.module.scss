@@ -1,0 +1,99 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.miniMap {
+  @include flex-col($spacing-sm);
+  @include flex-center;
+  background: $color-card;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border;
+  padding: $spacing-base;
+  overflow: hidden;
+}
+
+.mapSvg {
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+}
+
+.chinaOutline {
+  fill: #f5f0e6;
+  stroke: #d4c8b8;
+  stroke-width: 1.5;
+}
+
+.shaanxiFill {
+  fill: rgba(185, 71, 61, 0.18);
+  stroke: none;
+}
+
+.shaanxiBorder {
+  fill: none;
+  stroke: $color-primary;
+  stroke-width: 2;
+}
+
+.provinceLabel {
+  font-size: 10px;
+  fill: $color-text-secondary;
+  text-anchor: middle;
+}
+
+.pin {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.pinRing {
+  fill: none;
+  stroke: $color-primary;
+  stroke-width: 1.5;
+  opacity: 0.5;
+}
+
+.pinDot {
+  fill: $color-primary;
+}
+
+.pinLine {
+  stroke: $color-primary;
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+  opacity: 0.6;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.labelBg {
+  fill: #fff;
+  stroke: $color-primary;
+  stroke-width: 1;
+}
+
+.huaxianLabel {
+  font-size: 11px;
+  font-weight: $font-weight-semibold;
+  fill: $color-primary;
+  text-anchor: middle;
+}
+
+.caption {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: $radius-full;
+  background: $color-primary;
+}

@@ -1,0 +1,190 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col($spacing-base);
+  padding: $spacing-base $spacing-base $spacing-2xl;
+}
+
+.header {
+  @include flex-col($spacing-xs);
+}
+
+.provinceTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.statsText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  strong {
+    color: $color-primary;
+    font-weight: $font-weight-bold;
+  }
+}
+
+.outline {
+  @include flex-center;
+  background: $color-card;
+  border-radius: $radius-lg;
+  border: 1px solid $color-border;
+  height: 220px;
+  overflow: hidden;
+}
+
+.shareBtn {
+  @include clickable;
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: $color-card;
+  border: 1px solid $color-border;
+}
+
+.filterTabs {
+  @include flex-row(0);
+  border-bottom: 1px solid $color-border;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 0;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  transition: all $transition-fast;
+  cursor: pointer;
+}
+
+.tabActive {
+  color: $color-primary;
+  border-bottom-color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+.filterOptions {
+  @include flex-row($spacing-sm, wrap);
+  padding-top: 4px;
+}
+
+.option,
+.optionActive {
+  @include clickable;
+  padding: 4px 12px;
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  border: 1px solid $color-border;
+  transition: all $transition-fast;
+}
+
+.option {
+  background: $color-card;
+  color: $color-text-secondary;
+}
+
+.optionActive {
+  background: $color-primary;
+  color: #fff;
+  border-color: $color-primary;
+}
+
+.list {
+  @include flex-col($spacing-md);
+}
+
+.card {
+  @include flex-row($spacing-base);
+  @include card;
+  @include clickable;
+  padding: $spacing-base;
+  border-radius: $radius-base;
+  text-decoration: none;
+}
+
+.cardCover {
+  width: 90px;
+  height: 90px;
+  border-radius: $radius-md;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: $color-border;
+}
+
+.cardInfo {
+  @include flex-col($spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.cardName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include ellipsis;
+}
+
+.cardLocation {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include ellipsis;
+}
+
+.cardTags {
+  @include flex-row($spacing-xs, wrap);
+  margin: 2px 0;
+}
+
+.domainTag,
+.categoryTag {
+  @include tag-pill(transparent, $color-text-secondary);
+  border: 1px solid $color-border;
+}
+
+.cardSummary {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include ellipsis-lines(2);
+}
+
+.cardStatus {
+  @include flex-row($spacing-sm);
+  margin-top: 4px;
+}
+
+.statusFull {
+  @include tag-pill($color-primary-light, $color-primary);
+  font-weight: $font-weight-medium;
+}
+
+.statusVideo {
+  @include tag-pill($color-secondary-light, $color-secondary);
+}
+
+.statusPreview {
+  @include tag-pill($color-border, $color-text-secondary);
+}
+
+.statusMore {
+  @include tag-pill($color-gold-light, $color-gold);
+}
+
+.empty {
+  @include flex-center;
+  padding: $spacing-2xl 0;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  opacity: 0.7;
+  padding: $spacing-md 0;
+}

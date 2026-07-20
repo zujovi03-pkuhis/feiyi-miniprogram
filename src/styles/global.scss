@@ -1,0 +1,165 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+// ============================================================
+// 全局重置 & 基础样式
+// ============================================================
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $color-text-primary;
+  background: $color-sides;
+  min-height: 100vh;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+input,
+textarea {
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  border: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+// ============================================================
+// 滚动条样式（桌面端）
+// ============================================================
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $color-border;
+  border-radius: $radius-full;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+// ============================================================
+// 通用工具类
+// ============================================================
+
+// 文字省略
+.text-ellipsis {
+  @include ellipsis;
+}
+
+.text-ellipsis-2 {
+  @include ellipsis-lines(2);
+}
+
+.text-ellipsis-3 {
+  @include ellipsis-lines(3);
+}
+
+// 文字颜色
+.text-primary { color: $color-text-primary; }
+.text-secondary { color: $color-text-secondary; }
+.text-brand { color: $color-primary; }
+.text-blue { color: $color-secondary; }
+.text-gold { color: $color-gold; }
+
+// 字号
+.text-xs { font-size: $font-size-xs; }
+.text-sm { font-size: $font-size-sm; }
+.text-base { font-size: $font-size-base; }
+.text-lg { font-size: $font-size-lg; }
+.text-xl { font-size: $font-size-xl; }
+.text-2xl { font-size: $font-size-2xl; }
+
+// 字重
+.font-medium { font-weight: $font-weight-medium; }
+.font-semibold { font-weight: $font-weight-semibold; }
+.font-bold { font-weight: $font-weight-bold; }
+
+// 间距
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-base { margin-top: $spacing-base; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-base { margin-bottom: $spacing-base; }
+.mb-lg { margin-bottom: $spacing-lg; }
+
+.p-base { padding: $spacing-base; }
+.p-lg { padding: $spacing-lg; }
+
+// ============================================================
+// 页面占位样式（阶段2用，后续替换）
+// ============================================================
+
+.page-placeholder {
+  @include flex-col($spacing-xl);
+  @include flex-center;
+  min-height: 60vh;
+  text-align: center;
+  color: $color-text-secondary;
+
+  &__icon {
+    font-size: 48px;
+    opacity: 0.3;
+  }
+
+  &__title {
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+  }
+
+  &__desc {
+    font-size: $font-size-sm;
+    max-width: 280px;
+  }
+
+  &__stage {
+    @include tag-pill($color-gold-light, $color-gold);
+    margin-top: $spacing-sm;
+  }
+}

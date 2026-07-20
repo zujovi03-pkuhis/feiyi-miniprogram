@@ -1,0 +1,500 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col;
+  min-height: 100vh;
+  background: $color-background;
+  padding-bottom: $spacing-xl;
+}
+
+.empty {
+  @include flex-col($spacing-md);
+  @include flex-center;
+  min-height: 100vh;
+  color: $color-text-secondary;
+
+  button {
+    padding: 8px 20px;
+    border-radius: $radius-full;
+    background: $color-primary;
+    color: #fff;
+    border: none;
+    font-size: $font-size-sm;
+    cursor: pointer;
+  }
+}
+
+// --- 顶部操作栏 ---
+.topBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $spacing-sm $spacing-base;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), transparent);
+  pointer-events: none;
+
+  .iconBtn {
+    pointer-events: auto;
+    @include flex-center;
+    width: 36px;
+    height: 36px;
+    border-radius: $radius-full;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4px);
+    border: none;
+    cursor: pointer;
+    transition: background $transition-fast;
+
+    &:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+  }
+}
+
+// --- 播放器 ---
+.player {
+  width: 100%;
+  background: #000;
+  position: relative;
+  aspect-ratio: 16 / 10;
+}
+
+.video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
+.playOverlay {
+  position: absolute;
+  inset: 0;
+  @include flex-center;
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.playButton {
+  width: 64px;
+  height: 64px;
+  border-radius: $radius-full;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(8px);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  @include flex-center;
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// --- 控制栏 ---
+.controls {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  padding: $spacing-sm $spacing-base;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.controlBtn {
+  @include flex-center;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+}
+
+.time {
+  font-size: $font-size-xs;
+  color: rgba(255, 255, 255, 0.95);
+  font-family: monospace;
+  white-space: nowrap;
+  min-width: 80px;
+  text-align: center;
+}
+
+.progressBar {
+  flex: 1;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: $radius-full;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    height: 6px;
+  }
+}
+
+.progressFill {
+  height: 100%;
+  background: $color-primary;
+  border-radius: $radius-full;
+  transition: width 0.1s linear;
+}
+
+// --- 视频信息 ---
+.videoInfo {
+  @include flex-col($spacing-xs);
+  padding: $spacing-base;
+  background: $color-card;
+  border-bottom: 1px solid $color-border;
+}
+
+.videoTitle {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  line-height: 1.3;
+}
+
+.videoSubtitle {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.durationBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: $radius-full;
+  background: $color-gold-light;
+  color: $color-gold;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+}
+
+// --- 标签 ---
+.tabs {
+  @include flex-row(0);
+  background: $color-card;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.tab {
+  @include clickable;
+  flex: 1;
+  padding: 14px 0;
+  text-align: center;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  position: relative;
+  transition: color $transition-fast;
+  background: transparent;
+  border: none;
+}
+
+.tabActive {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 32px;
+    height: 2px;
+    background: $color-primary;
+    border-radius: 1px;
+  }
+}
+
+// --- 标签内容 ---
+.tabContent {
+  flex: 1;
+  background: $color-background;
+}
+
+.tabPanel {
+  @include flex-col($spacing-lg);
+  padding: $spacing-base;
+}
+
+// --- 章节时间轴 ---
+.chapters {
+  background: $color-card;
+  border-radius: $radius-lg;
+  padding: $spacing-base;
+  border: 1px solid $color-border;
+}
+
+.chapterList {
+  @include flex-col(0);
+}
+
+.chapter {
+  @include flex-row($spacing-md);
+  align-items: center;
+  padding: $spacing-md 0;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px solid $color-border;
+  transition: background $transition-fast;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: $color-primary-light;
+    margin: 0 calc(-1 * $spacing-base);
+    padding-left: $spacing-base;
+    padding-right: $spacing-base;
+  }
+}
+
+.chapterDotLine {
+  @include flex-col;
+  align-items: center;
+  width: 14px;
+  height: 100%;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.chapterDot {
+  width: 10px;
+  height: 10px;
+  border-radius: $radius-full;
+  border: 2px solid $color-border;
+  background: $color-card;
+  z-index: 1;
+  transition: all $transition-fast;
+}
+
+.chapterDotActive {
+  border-color: $color-primary;
+  background: $color-primary;
+}
+
+.chapterDotPast {
+  border-color: $color-primary;
+  background: $color-primary;
+  opacity: 0.6;
+}
+
+.chapterLine {
+  position: absolute;
+  top: 10px;
+  bottom: -28px;
+  width: 2px;
+  background: $color-border;
+}
+
+.chapterTime {
+  font-family: monospace;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-primary;
+  min-width: 44px;
+  flex-shrink: 0;
+}
+
+.chapterLabel {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  font-weight: $font-weight-medium;
+}
+
+.chapterArrow {
+  color: $color-text-secondary;
+  flex-shrink: 0;
+}
+
+// --- 看完想一想 ---
+.thinkCard {
+  background: $color-card;
+  border-radius: $radius-lg;
+  padding: $spacing-base;
+  border: 1px solid $color-border;
+}
+
+.thinkHeader {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.thinkIcon {
+  @include flex-center;
+  width: 32px;
+  height: 32px;
+  border-radius: $radius-full;
+  background: $color-secondary;
+}
+
+.thinkTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-secondary;
+}
+
+.thinkList {
+  @include flex-col($spacing-md);
+}
+
+.thinkItem {
+  @include flex-row($spacing-md);
+  align-items: flex-start;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: 1.6;
+}
+
+.thinkNum {
+  @include flex-center;
+  width: 20px;
+  height: 20px;
+  border-radius: $radius-full;
+  background: $color-primary-light;
+  color: $color-primary;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-bold;
+  flex-shrink: 0;
+}
+
+.thinkQuestion {
+  flex: 1;
+  padding-top: 2px;
+}
+
+// --- 相关视频 ---
+.relatedSection {
+  @include flex-col($spacing-md);
+}
+
+.relatedHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.relatedTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.relatedMore {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-sm;
+}
+
+.relatedCard {
+  @include flex-col($spacing-xs);
+  cursor: pointer;
+}
+
+.relatedThumb {
+  position: relative;
+  border-radius: $radius-md;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: $color-secondary;
+}
+
+.relatedImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.relatedDuration {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  padding: 1px 4px;
+  border-radius: $radius-sm;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 10px;
+  font-family: monospace;
+}
+
+.relatedCardTitle {
+  font-size: 12px;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin: 0;
+}
+
+.relatedCardSubtitle {
+  font-size: 10px;
+  color: $color-text-secondary;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.relatedNote {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  text-align: center;
+  margin-top: $spacing-sm;
+}
+
+// --- 响应式微调 ---
+@media (max-width: 360px) {
+  .relatedGrid {
+    gap: $spacing-xs;
+  }
+
+  .relatedCardTitle {
+    font-size: 11px;
+  }
+}

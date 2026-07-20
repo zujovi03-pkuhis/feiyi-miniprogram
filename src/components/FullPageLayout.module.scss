@@ -1,0 +1,11 @@
+@use "../styles/variables" as *;
+
+.shell {
+  max-width: $max-width;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: $color-background;
+  position: relative;
+  box-shadow: 0 0 20px rgba(40, 36, 33, 0.04);
+  overflow-x: hidden;
+}

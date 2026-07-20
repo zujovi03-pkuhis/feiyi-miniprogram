@@ -1,0 +1,140 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  background: rgba(40, 36, 33, 0.25);
+  @include flex-center;
+  padding: $spacing-base;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.bubble {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  background: $color-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-lg;
+  animation: slideUp 0.25s ease;
+  border: 1px solid $color-border;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.closeBtn {
+  position: absolute;
+  top: $spacing-sm;
+  right: $spacing-sm;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  @include flex-center;
+  color: $color-text-secondary;
+  background: transparent;
+  @include clickable;
+
+  &:hover {
+    background: $color-background;
+  }
+}
+
+.header {
+  @include flex-row($spacing-sm);
+  align-items: baseline;
+  margin-bottom: $spacing-md;
+  padding-right: 24px; // 给关闭按钮留空间
+}
+
+.provinceName {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.divider {
+  color: $color-text-secondary;
+  font-size: $font-size-md;
+}
+
+.count {
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+}
+
+.body {
+  @include flex-col($spacing-md);
+  margin-bottom: $spacing-md;
+}
+
+.representatives {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+  @include ellipsis-lines(2);
+}
+
+.projectTags {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.tag {
+  @include tag-pill($color-primary-light, $color-primary);
+  @include clickable;
+  padding: 4px 10px;
+  font-size: $font-size-sm;
+  border: 1px solid rgba(185, 71, 61, 0.15);
+}
+
+.emptyHint {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.5;
+  text-align: center;
+  padding: $spacing-sm 0;
+}
+
+.viewAll {
+  width: 100%;
+  @include flex-row($spacing-xs);
+  align-items: center;
+  justify-content: center;
+  padding: $spacing-sm $spacing-base;
+  border-radius: $radius-md;
+  background: $color-primary;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  @include clickable;
+  transition: background $transition-fast;
+
+  &:hover {
+    background: $color-primary-dark;
+  }
+
+  svg {
+    margin-left: auto;
+  }
+}

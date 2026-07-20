@@ -1,0 +1,123 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.mapContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 10 / 8;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fffcf7 0%, #f5efe4 100%);
+  border: 1px solid $color-border;
+  box-shadow: inset 0 0 20px rgba(187, 169, 138, 0.08);
+}
+
+.mapSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+// ── 省份路径 ──────────────────────────────────────────
+.provincePath {
+  cursor: pointer;
+  transition: fill 0.2s ease, opacity 0.2s ease;
+  pointer-events: visiblePainted;
+
+  &:hover {
+    fill-opacity: 0.82;
+    filter: brightness(1.06);
+  }
+}
+
+.provinceEmpty {
+  cursor: default;
+  pointer-events: none;
+
+  &:hover {
+    fill-opacity: 1;
+    filter: none;
+  }
+}
+
+.provinceActive {
+  // 有筛选结果匹配的省份额外加亮
+  fill-opacity: 0.92;
+}
+
+.provinceSelected {
+  fill-opacity: 1;
+}
+
+// ── 省份标签 ──────────────────────────────────────────
+.labelGroup {
+  pointer-events: none;
+  user-select: none;
+}
+
+.provinceLabel {
+  font-size: 11px;
+  font-weight: $font-weight-semibold;
+  fill: #4a3f2f;
+  paint-order: stroke;
+  stroke: rgba(255, 252, 247, 0.85);
+  stroke-width: 2.5px;
+  stroke-linejoin: round;
+}
+
+.provinceLabelSmall {
+  font-size: 10px;
+  font-weight: $font-weight-medium;
+}
+
+.provinceLabelSelected {
+  fill: #b9473d;
+  font-weight: $font-weight-bold;
+}
+
+.leaderLine {
+  opacity: 0.5;
+}
+
+.countText {
+  font-size: 9px;
+  font-weight: $font-weight-medium;
+  fill: #6e6961;
+  paint-order: stroke;
+  stroke: rgba(255, 252, 247, 0.85);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+.countBadge {
+  font-size: 9px;
+  font-weight: $font-weight-bold;
+  fill: #fff;
+  paint-order: stroke;
+  stroke: rgba(185, 71, 61, 0.9);
+  stroke-width: 2px;
+  stroke-linejoin: round;
+}
+
+// ── 无结果遮罩 ────────────────────────────────────────
+.noResult {
+  position: absolute;
+  inset: 0;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-sm;
+  background: rgba(247, 242, 232, 0.85);
+  backdrop-filter: blur(2px);
+  z-index: 10;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+  text-align: center;
+  padding: $spacing-base;
+
+  p:first-of-type {
+    color: $color-text-primary;
+    font-weight: $font-weight-medium;
+  }
+}

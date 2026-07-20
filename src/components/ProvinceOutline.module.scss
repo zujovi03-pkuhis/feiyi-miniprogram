@@ -1,0 +1,62 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.wrapper {
+  @include flex-center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: $spacing-md;
+}
+
+.svg {
+  width: 100%;
+  height: 100%;
+  max-width: 260px;
+  max-height: 320px;
+}
+
+.outline {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.provinceWatermark {
+  fill: rgba(185, 71, 61, 0.12);
+  font-weight: $font-weight-bold;
+  paint-order: stroke;
+  stroke: rgba(255, 252, 247, 0.5);
+  stroke-width: 0.5px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.cityGroup {
+  cursor: pointer;
+}
+
+.cityDot {
+  filter: drop-shadow(0 1px 2px rgba(40, 36, 33, 0.2));
+}
+
+.cityLabel {
+  fill: $color-text-primary;
+  font-weight: $font-weight-medium;
+  paint-order: stroke;
+  stroke: rgba(255, 252, 247, 0.9);
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  pointer-events: none;
+  user-select: none;
+}
+
+.fallback {
+  @include flex-center;
+  width: 120px;
+  height: 160px;
+  border-radius: $radius-md;
+  background: $color-background;
+  border: 1px dashed $color-border;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}

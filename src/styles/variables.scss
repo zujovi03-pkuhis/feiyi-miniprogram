@@ -1,0 +1,87 @@
+// ============================================================
+// 设计令牌 (Design Tokens)
+// 来源：demo提示词第十七节 视觉规范
+// ============================================================
+
+// --- 核心色彩 ---
+$color-primary: #B9473D;           // 朱砂红
+$color-secondary: #315B67;          // 青黛蓝
+$color-gold: #C89A4B;               // 淡金色
+$color-background: #F7F2E8;         // 宣纸底
+$color-card: #FFFDF8;               // 卡片底色
+$color-text-primary: #282421;       // 主文字
+$color-text-secondary: #6E6961;     // 次要文字
+$color-border: #E8E0D5;             // 边框
+$color-sides: #E8E0D5;              // 桌面端两侧米白背景
+
+// --- 派生色彩 ---
+$color-primary-light: rgba(185, 71, 61, 0.08);
+$color-primary-dark: #9C3A31;
+$color-secondary-light: rgba(49, 91, 103, 0.08);
+$color-gold-light: rgba(200, 154, 75, 0.1);
+$color-success: #4A7C59;
+$color-disabled: #C5C0B8;
+$color-overlay: rgba(40, 36, 33, 0.5);
+
+// --- 字体 ---
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+  "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial,
+  sans-serif;
+$font-family-serif: "Songti SC", "SimSun", "Noto Serif SC", serif;
+
+// --- 字号层级 ---
+$font-size-xs: 11px;
+$font-size-sm: 13px;
+$font-size-base: 15px;
+$font-size-md: 16px;
+$font-size-lg: 18px;
+$font-size-xl: 20px;
+$font-size-2xl: 24px;
+$font-size-3xl: 28px;
+
+// --- 字重 ---
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// --- 间距 ---
+$spacing-xs: 4px;
+$spacing-sm: 8px;
+$spacing-md: 12px;
+$spacing-base: 16px;
+$spacing-lg: 20px;
+$spacing-xl: 24px;
+$spacing-2xl: 32px;
+
+// --- 圆角 ---
+$radius-sm: 6px;
+$radius-md: 10px;
+$radius-base: 12px;
+$radius-lg: 16px;
+$radius-xl: 20px;
+$radius-full: 9999px;
+
+// --- 阴影 ---
+$shadow-sm: 0 1px 3px rgba(40, 36, 33, 0.06);
+$shadow-base: 0 2px 8px rgba(40, 36, 33, 0.08);
+$shadow-md: 0 4px 12px rgba(40, 36, 33, 0.1);
+$shadow-lg: 0 8px 24px rgba(40, 36, 33, 0.12);
+
+// --- 布局 ---
+$max-width: 430px;
+$bottom-nav-height: 56px;
+$tab-bar-height: 44px;
+$header-height: 52px;
+
+// --- 过渡 ---
+$transition-fast: 0.15s ease;
+$transition-base: 0.25s ease;
+$transition-slow: 0.4s ease;
+
+// --- z-index 层级 ---
+$z-bottom-nav: 100;
+$z-header: 200;
+$z-toast: 1000;
+$z-modal: 2000;

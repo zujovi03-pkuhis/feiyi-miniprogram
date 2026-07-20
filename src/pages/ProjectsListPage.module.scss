@@ -1,0 +1,220 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col;
+  min-height: 100vh;
+}
+
+.header {
+  @include flex-col($spacing-md);
+  padding: $spacing-lg $spacing-base $spacing-base;
+  background: $color-card;
+  border-bottom: 1px solid $color-border;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.subtitle {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+
+  strong {
+    color: $color-primary;
+    font-size: $font-size-md;
+  }
+}
+
+.searchBox {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  background: $color-background;
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  padding: 8px 16px;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+}
+
+.filterTypeTabs {
+  @include flex-row($spacing-sm);
+}
+
+.typeTab,
+.typeTabActive {
+  @include clickable;
+  @include flex-row($spacing-xs);
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  border: 1px solid $color-border;
+}
+
+.typeTab {
+  background: $color-card;
+  color: $color-text-secondary;
+}
+
+.typeTabActive {
+  background: $color-primary;
+  color: #fff;
+  border-color: $color-primary;
+}
+
+.filterTags,
+.provinceTags {
+  @include flex-row($spacing-sm, wrap);
+  max-height: 88px;
+  overflow-y: auto;
+}
+
+.tag {
+  @include clickable;
+  padding: 4px 12px;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  background: $color-background;
+  color: $color-text-secondary;
+  border: 1px solid $color-border;
+  transition: all $transition-fast;
+}
+
+.tagActive {
+  background: $color-primary;
+  color: #fff;
+  border-color: $color-primary;
+}
+
+.resultInfo {
+  padding: $spacing-md $spacing-base;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  background: $color-card;
+  border-bottom: 1px solid $color-border;
+
+  strong {
+    color: $color-text-primary;
+  }
+}
+
+.grid {
+  @include flex-col($spacing-md);
+  padding: $spacing-base $spacing-base $spacing-2xl;
+}
+
+.card {
+  @include flex-row($spacing-base);
+  @include card;
+  @include clickable;
+  padding: $spacing-base;
+  border-radius: $radius-base;
+  text-decoration: none;
+}
+
+.cardCover {
+  width: 80px;
+  height: 80px;
+  border-radius: $radius-md;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: $color-border;
+}
+
+.cardBody {
+  @include flex-col($spacing-xs);
+  flex: 1;
+  min-width: 0;
+}
+
+.cardName {
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include ellipsis;
+}
+
+.cardLocation {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include ellipsis;
+}
+
+.cardTags {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.separator {
+  color: $color-border;
+}
+
+.cardSummary {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include ellipsis-lines(2);
+  line-height: 1.5;
+}
+
+.fullBadge {
+  @include tag-pill($color-primary-light, $color-primary);
+  align-self: flex-start;
+  margin-top: 2px;
+  font-weight: $font-weight-medium;
+}
+
+.previewBadge {
+  @include tag-pill($color-border, $color-text-secondary);
+  align-self: flex-start;
+  margin-top: 2px;
+}
+
+.nationwideBadge {
+  @include tag-pill($color-secondary-light, $color-secondary);
+  margin-left: $spacing-xs;
+}
+
+.empty {
+  @include flex-col($spacing-base);
+  @include flex-center;
+  padding: $spacing-2xl;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.resetBtn {
+  @include clickable;
+  padding: 8px 20px;
+  border-radius: $radius-full;
+  background: $color-primary;
+  color: #fff;
+  font-size: $font-size-sm;
+  border: none;
+}
+
+.disclaimer {
+  text-align: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  opacity: 0.7;
+  padding-bottom: $spacing-2xl;
+}

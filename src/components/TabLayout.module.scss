@@ -1,0 +1,16 @@
+@use "../styles/variables" as *;
+
+.shell {
+  max-width: $max-width;
+  margin: 0 auto;
+  min-height: 100vh;
+  background: $color-background;
+  position: relative;
+  box-shadow: 0 0 20px rgba(40, 36, 33, 0.04);
+  overflow-x: hidden;
+}
+
+.content {
+  min-height: 100vh;
+  padding-bottom: calc(#{$bottom-nav-height} + env(safe-area-inset-bottom, 0px) + 8px);
+}

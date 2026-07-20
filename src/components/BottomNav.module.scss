@@ -1,0 +1,36 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $max-width;
+  height: $bottom-nav-height;
+  background: $color-card;
+  border-top: 1px solid $color-border;
+  display: flex;
+  align-items: stretch;
+  z-index: $z-bottom-nav;
+  @include safe-area-bottom;
+}
+
+.item {
+  @include flex-col(2px);
+  @include flex-center;
+  @include clickable;
+  flex: 1;
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+
+  &.active {
+    color: $color-primary;
+  }
+}
+
+.label {
+  font-size: 10px;
+  font-weight: $font-weight-medium;
+}

@@ -1,0 +1,432 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col;
+  min-height: 100vh;
+  padding-bottom: calc($bottom-nav-height + env(safe-area-inset-bottom, 0px));
+}
+
+// --- 顶部区域 ---
+.header {
+  @include flex-col($spacing-md);
+  padding: $spacing-lg $spacing-base $spacing-base;
+  background: linear-gradient(180deg, $color-card 0%, $color-background 100%);
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+  box-shadow: 0 2px 8px rgba(40, 36, 33, 0.04);
+}
+
+.titleRow {
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $color-primary;
+  text-align: center;
+  letter-spacing: 2px;
+  flex: 1;
+}
+
+.titleActions {
+  @include flex-row($spacing-sm);
+}
+
+.iconBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  @include flex-center;
+  color: $color-text-secondary;
+  background: $color-card;
+  border: 1px solid $color-border;
+  @include clickable;
+}
+
+.searchBox {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  background: $color-card;
+  border: 1px solid $color-border;
+  border-radius: $radius-full;
+  padding: 8px 16px;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  background: transparent;
+
+  &::placeholder {
+    color: $color-text-secondary;
+  }
+}
+
+.clearBtn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  @include flex-center;
+  color: $color-text-secondary;
+  background: $color-background;
+  @include clickable;
+}
+
+.filterTags {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.tag {
+  @include clickable;
+  padding: 4px 14px;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  background: $color-card;
+  border: 1px solid $color-border;
+  transition: all $transition-fast;
+
+  &Active {
+    border-color: transparent;
+  }
+}
+
+// --- 地图区域 ---
+.mapArea {
+  @include flex-col($spacing-sm);
+  padding: $spacing-base;
+  flex: 1;
+  min-height: 0;
+}
+
+.nationwideCard {
+  @include card;
+  padding: $spacing-md;
+  border-left: 3px solid $color-gold;
+  margin-bottom: $spacing-sm;
+}
+
+.nationwideHeader {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  margin-bottom: $spacing-sm;
+}
+
+.nationwideIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  @include flex-center;
+  background: $color-gold-light;
+  color: $color-gold;
+}
+
+.nationwideTitle {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.nationwideCount {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  margin-left: auto;
+}
+
+.nationwideList {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.nationwideItem {
+  @include tag-pill($color-gold-light, $color-gold);
+  @include clickable;
+  font-size: $font-size-sm;
+  padding: 3px 10px;
+}
+
+.disclaimer {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  justify-content: center;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  text-align: center;
+  padding: $spacing-xs $spacing-base;
+
+  svg {
+    flex-shrink: 0;
+  }
+}
+
+// --- 底部项目面板 ---
+.bottomPanel {
+  @include flex-col($spacing-md);
+  padding: $spacing-base;
+  background: $color-card;
+  border-top: 1px solid $color-border;
+  border-radius: $radius-lg $radius-lg 0 0;
+  margin-top: auto;
+  min-height: 240px;
+}
+
+.panelHeader {
+  @include flex-row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.panelTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.panelCount {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  margin-left: $spacing-sm;
+}
+
+.panelMore {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  font-size: $font-size-sm;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  @include clickable;
+}
+
+.projectScroll {
+  display: flex;
+  flex-direction: row;
+  gap: $spacing-sm;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-bottom: $spacing-sm;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.projectCard {
+  flex: 0 0 auto;
+  width: 260px;
+  @include card;
+  overflow: hidden;
+  scroll-snap-align: start;
+  @include clickable;
+  display: flex;
+  flex-direction: column;
+  transition: transform $transition-fast, box-shadow $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+}
+
+.cardImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 130px;
+  overflow: hidden;
+  background: $color-background;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.videoBadge {
+  position: absolute;
+  bottom: $spacing-xs;
+  right: $spacing-xs;
+  @include tag-pill($color-primary, #fff);
+  padding: 2px 6px;
+  font-size: 10px;
+  font-weight: $font-weight-semibold;
+}
+
+.cardBody {
+  @include flex-col($spacing-xs);
+  padding: $spacing-sm $spacing-base;
+  flex: 1;
+}
+
+.cardName {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include ellipsis;
+}
+
+.cardMeta {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include ellipsis;
+}
+
+.cardCategory {
+  font-size: $font-size-xs;
+  color: $color-primary;
+  font-weight: $font-weight-medium;
+  @include ellipsis;
+}
+
+.cardIntro {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  line-height: 1.4;
+  @include ellipsis-lines(2);
+  margin-top: 2px;
+}
+
+.cardStatus {
+  @include flex-row($spacing-xs, wrap);
+  padding: $spacing-xs $spacing-base $spacing-sm;
+  border-top: 1px solid $color-border;
+}
+
+.statusFull {
+  @include tag-pill($color-primary-light, $color-primary);
+  font-size: 10px;
+}
+
+.statusPreview {
+  @include tag-pill($color-secondary-light, $color-secondary);
+  font-size: 10px;
+}
+
+.statusVideo {
+  @include tag-pill(rgba(74, 124, 89, 0.1), $color-success);
+  font-size: 10px;
+}
+
+.emptyState {
+  flex: 1;
+  @include flex-center;
+  flex-direction: column;
+  gap: $spacing-sm;
+  padding: $spacing-xl;
+  color: $color-text-secondary;
+  font-size: $font-size-sm;
+}
+
+.emptyAction {
+  @include tag-pill($color-primary-light, $color-primary);
+  @include clickable;
+  font-size: $font-size-sm;
+  padding: $spacing-xs $spacing-base;
+}
+
+// --- 信息说明弹窗 ---
+.infoOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: $z-modal;
+  background: rgba(40, 36, 33, 0.25);
+  @include flex-center;
+  padding: $spacing-base;
+  animation: fadeIn 0.2s ease;
+}
+
+.infoCard {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  background: $color-card;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-lg;
+  padding: $spacing-lg;
+  border: 1px solid $color-border;
+  animation: slideUp 0.25s ease;
+}
+
+.infoClose {
+  position: absolute;
+  top: $spacing-sm;
+  right: $spacing-sm;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  @include flex-center;
+  color: $color-text-secondary;
+  background: transparent;
+  @include clickable;
+}
+
+.infoTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  padding-right: 24px;
+}
+
+.infoText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.6;
+  margin-bottom: $spacing-sm;
+}
+
+.infoBtn {
+  width: 100%;
+  margin-top: $spacing-md;
+  padding: $spacing-sm;
+  border-radius: $radius-md;
+  background: $color-primary;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  @include clickable;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// --- 阶段标记（阶段3完成后可移除）---
+.stageBadge {
+  @include tag-pill($color-gold-light, $color-gold);
+  align-self: center;
+  margin: $spacing-base 0;
+}
+
+// 小屏适配
+@media (max-width: 360px) {
+  .projectCard {
+    width: 230px;
+  }
+
+  .cardImageWrapper {
+    height: 110px;
+  }
+}

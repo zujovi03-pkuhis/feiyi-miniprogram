@@ -1,0 +1,32 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col($spacing-md);
+  @include flex-center;
+  min-height: 70vh;
+  text-align: center;
+  padding: $spacing-base;
+}
+
+.icon {
+  margin-bottom: $spacing-md;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.desc {
+  font-size: $font-size-base;
+  color: $color-text-secondary;
+}
+
+.hint {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  opacity: 0.7;
+  max-width: 260px;
+}

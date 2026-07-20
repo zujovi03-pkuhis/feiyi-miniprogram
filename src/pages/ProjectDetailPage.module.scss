@@ -1,0 +1,183 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col;
+  padding-bottom: $spacing-2xl;
+}
+
+.cover {
+  width: 100%;
+  height: 220px;
+  background: $color-border;
+  overflow: hidden;
+}
+
+.section {
+  @include flex-col($spacing-md);
+  padding: $spacing-base;
+  border-bottom: 1px solid $color-border;
+}
+
+.projectName {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+}
+
+.tags {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.tag {
+  @include tag-pill($color-primary-light, $color-primary);
+  border: 1px solid rgba(185, 71, 61, 0.15);
+}
+
+.summary {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.7;
+}
+
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  padding-left: $spacing-sm;
+  border-left: 3px solid $color-primary;
+}
+
+.brief {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: 1.8;
+}
+
+.features {
+  @include flex-col($spacing-md);
+}
+
+.featureItem {
+  @include flex-row($spacing-sm);
+  align-items: flex-start;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: 1.6;
+}
+
+.featureDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: $color-gold;
+  margin-top: 7px;
+  flex-shrink: 0;
+}
+
+.locations {
+  @include flex-col($spacing-sm);
+}
+
+.locationItem {
+  @include flex-row($spacing-xs);
+  align-items: center;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  padding: 6px 10px;
+  background: $color-background;
+  border-radius: $radius-base;
+}
+
+.primaryTag {
+  @include tag-pill($color-gold-light, $color-gold);
+  margin-left: $spacing-xs;
+}
+
+.nationwideTag {
+  @include tag-pill($color-secondary-light, $color-secondary);
+  align-self: flex-start;
+}
+
+.bookInfo {
+  @include flex-row($spacing-md);
+  align-items: flex-start;
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: 1.6;
+  padding: $spacing-base;
+  background: $color-background;
+  border-radius: $radius-base;
+}
+
+.bookName {
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.bookChapter,
+.bookSection {
+  color: $color-text-secondary;
+  font-size: $font-size-xs;
+}
+
+.footer {
+  @include flex-col($spacing-xs);
+  @include flex-center;
+  padding: $spacing-xl $spacing-base;
+  text-align: center;
+  background: $color-card;
+  border-top: 1px solid $color-border;
+  border-bottom: 1px solid $color-border;
+  margin-top: $spacing-base;
+}
+
+.footerText {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+}
+
+.footerSubtext {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  opacity: 0.7;
+}
+
+.disabledBtn {
+  @include clickable;
+  margin-top: $spacing-md;
+  padding: 10px 32px;
+  border-radius: $radius-full;
+  font-size: $font-size-sm;
+  background: $color-border;
+  color: $color-text-secondary;
+  border: 1px solid $color-border;
+  cursor: not-allowed;
+}
+
+.backToMap {
+  @include flex-center;
+  @include flex-row($spacing-xs);
+  @include clickable;
+  margin: $spacing-lg auto;
+  padding: 10px 24px;
+  border-radius: $radius-full;
+  background: $color-card;
+  border: 1px solid $color-border;
+  font-size: $font-size-sm;
+  color: $color-primary;
+  text-decoration: none;
+}
+
+.empty {
+  @include flex-col($spacing-base);
+  @include flex-center;
+  padding: $spacing-2xl;
+  color: $color-text-secondary;
+}
+
+.backLink {
+  color: $color-primary;
+  font-size: $font-size-sm;
+  text-decoration: none;
+}

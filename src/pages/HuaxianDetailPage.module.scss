@@ -1,0 +1,318 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.page {
+  @include flex-col;
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 80px; // 底部操作栏高度
+  background: $color-background;
+}
+
+// --- 顶部操作栏 ---
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $max-width;
+  height: $header-height;
+  padding: 0 $spacing-base;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: $z-header;
+  background: linear-gradient(to bottom, rgba(247, 242, 232, 0.95), rgba(247, 242, 232, 0));
+  pointer-events: none;
+
+  > * {
+    pointer-events: auto;
+  }
+}
+
+.topActions {
+  @include flex-row($spacing-sm);
+}
+
+.iconBtn {
+  @include clickable;
+  @include flex-center;
+  width: 36px;
+  height: 36px;
+  border-radius: $radius-full;
+  background: rgba(255, 253, 248, 0.9);
+  box-shadow: $shadow-sm;
+  backdrop-filter: blur(4px);
+}
+
+// --- 封面 ---
+.hero {
+  position: relative;
+  width: 100%;
+  height: 240px;
+  background: $color-border;
+  overflow: hidden;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(40, 36, 33, 0.15) 0%,
+    rgba(40, 36, 33, 0) 50%,
+    rgba(40, 36, 33, 0.35) 100%
+  );
+  pointer-events: none;
+}
+
+// --- 标题区 ---
+.titleSection {
+  @include flex-col($spacing-md);
+  padding: $spacing-base;
+  background: $color-card;
+  border-radius: 0 0 $radius-xl $radius-xl;
+  margin-top: -$spacing-lg;
+  position: relative;
+  z-index: 1;
+  box-shadow: $shadow-sm;
+}
+
+.title {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-bold;
+  color: $color-text-primary;
+  letter-spacing: 1px;
+}
+
+.tags {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.tag {
+  @include tag-pill($color-primary-light, $color-primary);
+  border: 1px solid rgba(185, 71, 61, 0.12);
+  font-size: $font-size-xs;
+}
+
+.summary {
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  line-height: 1.7;
+}
+
+// --- 基本信息网格 ---
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-md;
+  padding: $spacing-base;
+  margin-top: $spacing-base;
+}
+
+.infoItem {
+  @include flex-col(4px);
+  background: $color-card;
+  border-radius: $radius-md;
+  padding: $spacing-md;
+  border: 1px solid $color-border;
+}
+
+.infoLabel {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.infoValue {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: 1.4;
+}
+
+// --- 内容标签 ---
+.tabs {
+  @include flex-row(0);
+  overflow-x: auto;
+  padding: 0 $spacing-base;
+  margin-top: $spacing-base;
+  border-bottom: 1px solid $color-border;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.tab {
+  @include clickable;
+  padding: 12px 14px;
+  font-size: $font-size-sm;
+  color: $color-text-secondary;
+  white-space: nowrap;
+  position: relative;
+  transition: color $transition-fast;
+}
+
+.tabActive {
+  color: $color-primary;
+  font-weight: $font-weight-semibold;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    background: $color-primary;
+    border-radius: 1px;
+  }
+}
+
+// --- 标签内容 ---
+.tabContent {
+  min-height: 300px;
+  padding: $spacing-base 0;
+}
+
+.contentBlock {
+  @include flex-col($spacing-md);
+  padding: 0 $spacing-base;
+}
+
+.contentText {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  line-height: 1.8;
+}
+
+.featureList {
+  @include flex-row($spacing-sm, wrap);
+  margin-top: $spacing-xs;
+}
+
+.featureTag {
+  @include tag-pill($color-secondary-light, $color-secondary);
+  font-size: $font-size-xs;
+}
+
+// --- 制作技艺步骤 ---
+.steps {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.step {
+  @include clickable;
+  @include flex-col(2px);
+  @include flex-center;
+  width: 72px;
+  height: 72px;
+  border-radius: $radius-md;
+  background: $color-card;
+  border: 1px solid $color-border;
+  transition: all $transition-fast;
+}
+
+.stepActive {
+  background: $color-primary;
+  border-color: $color-primary;
+  box-shadow: $shadow-base;
+
+  .stepNum {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .stepName {
+    color: #fff;
+  }
+}
+
+.stepNum {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.stepName {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $color-text-primary;
+}
+
+.stepDetail {
+  @include flex-col($spacing-xs);
+  background: $color-card;
+  border-radius: $radius-md;
+  padding: $spacing-base;
+  border-left: 3px solid $color-primary;
+  box-shadow: $shadow-sm;
+
+  h4 {
+    font-size: $font-size-md;
+    font-weight: $font-weight-semibold;
+    color: $color-primary;
+  }
+
+  p {
+    font-size: $font-size-sm;
+    color: $color-text-primary;
+    line-height: 1.7;
+  }
+}
+
+// --- 表演特色 ---
+.performList {
+  @include flex-row($spacing-sm, wrap);
+}
+
+.performItem {
+  @include tag-pill($color-secondary-light, $color-secondary);
+  padding: 6px 16px;
+  font-size: $font-size-sm;
+}
+
+// --- 底部固定操作栏 ---
+.actionBar {
+  @include flex-row(0);
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: $max-width;
+  height: 64px;
+  background: $color-card;
+  border-top: 1px solid $color-border;
+  z-index: $z-bottom-nav;
+  @include safe-area-bottom;
+}
+
+.actionBtn {
+  @include clickable;
+  @include flex-col(2px);
+  @include flex-center;
+  flex: 1;
+  font-size: $font-size-xs;
+  color: $color-text-primary;
+}
+
+.actionPrimary {
+  @include clickable;
+  @include flex-col(2px);
+  @include flex-center;
+  flex: 1.5;
+  background: $color-primary;
+  color: #fff;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  border-radius: $radius-full;
+  margin: 8px 12px;
+  box-shadow: 0 4px 10px rgba(185, 71, 61, 0.25);
+}

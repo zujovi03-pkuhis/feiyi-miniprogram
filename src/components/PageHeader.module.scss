@@ -1,0 +1,52 @@
+@use "../styles/variables" as *;
+@use "../styles/mixins" as *;
+
+.header {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  height: $header-height;
+  padding: 0 $spacing-sm 0 $spacing-xs;
+  background: $color-card;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: $z-header;
+}
+
+.backBtn {
+  @include clickable;
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: $radius-full;
+  color: $color-text-primary;
+  flex-shrink: 0;
+
+  &:active {
+    background: $color-primary-light;
+  }
+}
+
+.titles {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  @include ellipsis;
+}
+
+.subtitle {
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+  @include ellipsis;
+}
+
+.right {
+  @include flex-row($spacing-sm);
+  align-items: center;
+  flex-shrink: 0;
+}
