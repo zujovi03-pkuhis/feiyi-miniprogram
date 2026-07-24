@@ -232,7 +232,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "中国影响最大的戏曲剧种，被誉为“国剧”，以唱念做打的综合艺术手法演绎历史故事。",
     briefIntroduction: "京剧形成于清代道光年间，融合徽剧、汉调，并吸收昆曲、秦腔之长，最终在北京定型。它以“生旦净丑”分行当，以“唱念做打”为基本功，以“手眼身法步”为表演要领，形成一套完整的程式化美学体系。代表剧目有《霸王别姬》《贵妃醉酒》《空城计》等。2010年被列入人类非物质文化遗产代表作名录。",
-    coverImage: "/assets/images/projects/peking-opera.svg",
+    coverImage: "/assets/images/projects/peking-opera.jpg",
     bookChapter: "第三章 表演艺术",
     bookSection: "第二节 京剧：国剧的辉煌与魅力",
     locations: [
@@ -257,7 +257,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "一束灯光，一方幕布，让精雕细琢的皮影人物在光影中演绎千年故事。",
     briefIntroduction: "华县皮影戏是陕西皮影艺术的重要代表。皮影艺人以经过处理的兽皮制作影偶，通过雕刻、敷彩和缀结形成可以活动的人物。表演时，艺人在白色幕布后操纵影偶，借助灯光、唱腔和乐器演绎历史故事、神话传说和民间故事。",
-    coverImage: "/assets/images/projects/huaxian-shadow-puppetry.svg",
+    coverImage: "/assets/images/projects/huaxian-shadow-puppetry.jpg",
     heroImage: "/assets/images/projects/huaxian-shadow-puppetry-hero.svg",
     bookChapter: "第三章 表演艺术",
     bookSection: "第三节 皮影戏：光影里的千年传奇",
@@ -359,7 +359,7 @@ export const bookProjects: HeritageProject[] = [
           title: "皮影人物如何表演",
           subtitle: "中国皮影戏 · 陕西华县",
           duration: "04:12",
-          thumbnail: "/assets/images/projects/huaxian-shadow-puppetry.svg",
+          thumbnail: "/assets/images/projects/huaxian-shadow-puppetry.jpg",
         },
         {
           title: "幕后的皮影艺人",
@@ -371,7 +371,7 @@ export const bookProjects: HeritageProject[] = [
           title: "不同地区的皮影有什么区别",
           subtitle: "中国皮影戏 · 多地",
           duration: "04:35",
-          thumbnail: "/assets/images/projects/huaxian-shadow-puppetry.svg",
+          thumbnail: "/assets/images/projects/huaxian-shadow-puppetry.jpg",
         },
       ],
     },
@@ -387,7 +387,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "中国最古老的弹拨乐器之一，承载着三千年文人音乐传统，被誉为“七弦上的千年雅韵”。",
     briefIntroduction: "古琴又称七弦琴，已有三千多年历史，是历代文人雅士修身养性的必修之器。古琴艺术注重“清微淡远”的审美意境，代表曲目有《流水》《广陵散》《梅花三弄》等。历代形成浙派、虞山派、广陵派、蜀派等众多流派，留下了三千多首古曲谱，是研究中国音乐史的活化石。2003年被列入人类非物质文化遗产代表作名录。",
-    coverImage: "/assets/images/projects/guqin.svg",
+    coverImage: "/assets/images/projects/guqin.jpg",
     bookChapter: "第三章 表演艺术",
     bookSection: "第四节 古琴艺术：七弦上的千年雅韵",
     locations: [
@@ -416,7 +416,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "集武术、舞蹈、音乐于一体的民间表演艺术，以灵动的舞姿和磅礴的气势传递东方祥瑞。",
     briefIntroduction: "狮舞是中国流传最广的民间舞蹈之一，分为南狮与北狮两大流派。南狮以广东佛山醒狮为代表，注重神态与武术技巧，动作矫健灵动；北狮以河北沧州狮舞为代表，讲究翻扑滚打，气势雄浑。狮舞常在春节、庙会等喜庆场合表演，寄托着驱邪纳福、吉祥如意的美好愿望。",
-    coverImage: "/assets/images/projects/lion-dance.svg",
+    coverImage: "/assets/images/projects/lion-dance.jpg",
     bookChapter: "第三章 表演艺术",
     bookSection: "第五节 狮舞：东方祥瑞的矫健舞姿",
     locations: [
@@ -443,7 +443,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "中国人通过观察太阳周年运动形成的时间知识体系，被誉为“中国第五大发明”。",
     briefIntroduction: "二十四节气起源于黄河流域，是上古农耕文明的产物。它以地球绕太阳公转周期为基础，将一年划分为二十四个时段，每个节气约15天，指导着农业生产与日常生活。立春、清明、夏至、冬至等节气不仅是农事坐标，更衍生出丰富的节令饮食、祭祀、民俗活动。2016年被列入人类非物质文化遗产代表作名录，国际气象界誉为“中国的第五大发明”。",
-    coverImage: "/assets/images/projects/solar-terms.svg",
+    coverImage: "/assets/images/projects/solar-terms.jpg",
     bookChapter: "第四章 社会实践、仪式和节庆活动",
     bookSection: "第二节 二十四节气：中国农耕文明的时间密码",
     locations: [
@@ -468,7 +468,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "中国人最隆重的传统节日，凝聚着辞旧迎新、阖家团圆的民族情感，是中华文化最大的集体仪式。",
     briefIntroduction: "春节即农历新年，起源于上古时代的岁首祈年祭祀。从腊月二十三小年开始，到正月十五元宵节结束，期间有扫尘、贴春联、守岁、拜年、舞龙舞狮、吃年夜饭等众多习俗。春节承载着中华民族辞旧迎新、阖家团圆、祈福纳祥的文化心理，是全球华人共同的文化纽带，也是世界上参与人数最多的年度庆典。",
-    coverImage: "/assets/images/projects/spring-festival.svg",
+    coverImage: "/assets/images/projects/spring-festival.jpg",
     bookChapter: "第四章 社会实践、仪式和节庆活动",
     bookSection: "第三节 春节：中国人最大的集体仪式",
     locations: [
@@ -521,7 +521,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "流传于陕北黄土高原的集体舞蹈，以红绸舞动的豪迈奔放，展现黄土地上的生命激情。",
     briefIntroduction: "陕北秧歌是流传于陕西榆林、延安一带的民间广场舞蹈，每逢春节、元宵节，村村寨寨都会组织秧歌队，沿门子拜年、闹社火。表演者手持红绸、彩扇，扭出“十字步”“走场子”等动作，配以锣鼓、唢呐伴奏。陕北秧歌体现了黄土高原人民乐观豪迈的性格，是研究陕北民俗的活态样本。",
-    coverImage: "/assets/images/projects/northern-shaanxi-yangge.svg",
+    coverImage: "/assets/images/projects/northern-shaanxi-yangge.jpg",
     bookChapter: "第四章 社会实践、仪式和节庆活动",
     bookSection: "第五节 陕北秧歌：黄土高原上的集体狂欢",
     locations: [
@@ -546,7 +546,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "以经络腧穴理论为核心的传统医学体系，用银针与艾草守护中华民族健康数千年。",
     briefIntroduction: "针灸是中医的重要组成部分，包括“针”（针刺）与“灸”（艾灸）两种疗法。它以《黄帝内经》为理论源头，通过刺激人体经络上的特定穴位，调和阴阳、疏通气血，达到治疗疾病的目的。针灸具有适应症广、疗效明显、操作方便、经济安全等优点，已被世界180多个国家和地区接受应用。2010年被列入人类非物质文化遗产代表作名录。",
-    coverImage: "/assets/images/projects/acupuncture.svg",
+    coverImage: "/assets/images/projects/acupuncture.jpg",
     bookChapter: "第五章 有关自然界和宇宙的知识与实践",
     bookSection: "第二节 中医针灸：银针里的生命哲学",
     locations: [
@@ -571,7 +571,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "以太极阴阳辩证理念为核心的传统拳术，集颐养性情、强身健体、技击对抗于一体。",
     briefIntroduction: "太极拳发源于河南温县陈家沟，由陈王廷于明末清初创编。它以《易经》阴阳辩证思想为核心，结合中医经络学与导引吐纳术，形成刚柔相济、快慢相间、内外兼修的拳术体系。经过数百年发展，衍生出陈、杨、武、吴、孙等众多流派。2020年被列入人类非物质文化遗产代表作名录，目前全球习练者超过3亿人。",
-    coverImage: "/assets/images/projects/taijiquan.svg",
+    coverImage: "/assets/images/projects/taijiquan.jpg",
     bookChapter: "第五章 有关自然界和宇宙的知识与实践",
     bookSection: "第三节 太极拳：身体中的宇宙观",
     locations: [
@@ -597,7 +597,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "以算盘为工具的传统计算方法，被誉为“世界上最古老的计算机”，凝结着中国人的数学智慧。",
     briefIntroduction: "珠算是以算盘为工具进行加、减、乘、除、开方运算的计算技术，起源于汉代，成熟于宋元，明代以后广泛应用于商业与日常生活。算盘结构简单、运算便捷，其口诀体系蕴含着深刻的数学思维。2013年被列入人类非物质文化遗产代表作名录。如今，珠算虽退出实用计算舞台，但作为开发儿童智力的工具与中华文化符号，仍在全球范围内传承。",
-    coverImage: "/assets/images/projects/abacus.svg",
+    coverImage: "/assets/images/projects/abacus.jpg",
     bookChapter: "第五章 有关自然界和宇宙的知识与实践",
     bookSection: "第四节 珠算：算盘上的数学智慧",
     locations: [
@@ -647,7 +647,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "用剪刀或刻刀在纸上创作的民间美术，以镂空艺术展现万象世界，寄托着民众的生活理想。",
     briefIntroduction: "中国剪纸是流传最广的民间艺术之一，各地风格迥异：陕北剪纸粗犷豪放、河北蔚县剪纸点彩绚丽、扬州剪纸清秀典雅、广东剪纸金碧辉煌。剪纸广泛应用于窗花、门笺、墙花、灯花等民俗场景，题材涵盖花鸟鱼虫、戏曲人物、吉祥图案等。2009年被列入人类非物质文化遗产代表作名录。",
-    coverImage: "/assets/images/projects/paper-cutting.svg",
+    coverImage: "/assets/images/projects/paper-cutting.jpg",
     bookChapter: "第六章 传统手工艺",
     bookSection: "第二节 中国剪纸：剪刀里的万象世界",
     locations: [
@@ -780,7 +780,7 @@ export const bookProjects: HeritageProject[] = [
     level: "人类非物质文化遗产代表作名录",
     summary: "以“雨过天青云破处”的釉色闻名于世，是全球首个入选人类非遗的陶瓷类项目。",
     briefIntroduction: "龙泉青瓷始烧于三国两晋，鼎盛于南宋，以“青如玉、明如镜、薄如纸、声如磬”著称。其釉色以粉青、梅子青为极品，需经粉碎、淘洗、陈腐、练泥、成型、修坯、素烧、施釉、装窑、烧成等七十二道工序。龙泉青瓷曾远销亚非欧三大洲，对世界陶瓷史产生深远影响。2009年被列入人类非物质文化遗产代表作名录，是全球陶瓷类首个入选项目。",
-    coverImage: "/assets/images/projects/longquan-celadon.svg",
+    coverImage: "/assets/images/projects/longquan-celadon.jpg",
     bookChapter: "第七章 传统手工艺（下篇）",
     bookSection: "第二节 龙泉青瓷传统烧制技艺：雨过天青的千年釉色",
     locations: [
@@ -804,7 +804,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "以手掌推磨出千年光泽的传统漆器技艺，使平遥推光漆器成为中国四大名漆器之一。",
     briefIntroduction: "平遥推光漆器始创于唐代开元年间，已有1200多年历史。其独特之处在于“推光”工艺：工匠用手掌蘸麻油反复推磨漆面，使漆器呈现出温润如玉的光泽。制作工艺包括制胎、刮灰、上漆、彩绘、推光、描金等数十道，成品具有耐酸碱、耐高温、永不褪色等特性。与福州脱胎漆器、扬州漆器、北京雕漆并称中国四大名漆器。",
-    coverImage: "/assets/images/projects/pingyao-lacquer.svg",
+    coverImage: "/assets/images/projects/pingyao-lacquer.jpg",
     bookChapter: "第七章 传统手工艺（下篇）",
     bookSection: "第三节 平遥推光漆器髹饰技艺：手掌推出的千年光泽",
     locations: [
@@ -2490,7 +2490,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "一声长调掠过草浪，气息连绵如地平线，唱尽了草原的辽阔与孤独。",
     briefIntroduction: "蒙古族长调民歌蒙古语称“乌日汀哆”，是蒙古族在游牧生活中创造的抒情性民歌，历史与草原游牧文明相始终。长调以气息悠长、节奏自由、音域宽广著称，旋律上行下行大起大落，多用“诺古拉”颤音装饰，一段唱腔可绵延数十秒，字少腔长、意境开阔，内容多咏赞草原、山川、骏马、蓝天与母爱亲情。演唱讲究真假声结合，常与马头琴、潮尔相和，在放牧、节庆、那达慕与婚礼上传唱。长调民歌是蒙古族音乐的灵魂，2005年被联合国教科文组织列为人类非物质文化遗产代表作。2006年入选第一批国家级非物质文化遗产名录，2008年、2014年、2021年又先后列入扩展名录。",
-    coverImage: "/assets/images/projects/meng-gu-zu-chang-diao-min-ge.svg",
+    coverImage: "/assets/images/projects/meng-gu-zu-chang-diao-min-ge.jpg",
     locations: [
       { provinceCode: "neimenggu", provinceName: "内蒙古自治区", displayName: "内蒙古", isPrimary: true },
     ],
@@ -5370,7 +5370,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "半印半绘点胭脂，杨柳青的年画娃娃抱着鲤鱼笑迎新春。",
     briefIntroduction: "杨柳青木版年画是天津杨柳青镇的传统木版年画，2006年列入第一批国家级非物质文化遗产名录。它产生于明代，清代雍乾年间达于鼎盛，画店林立、行销华北各地，与苏州桃花坞并称“南桃北柳”。制作采用木版套印与手工彩绘相结合的“半印半绘”工艺，印出墨线轮廓后再由画师敷彩开脸，画面细腻雅致、富有绘画韵味；题材以仕女娃娃、戏曲故事、时俗节令为主，《连年有余》中抱鲤鱼的胖娃娃是其经典形象。杨柳青木版年画融合民间趣味与文人画风，是中国年画艺术的高峰之一。",
-    coverImage: "/assets/images/projects/yang-liu-qing-mu-ban-nian-hua.svg",
+    coverImage: "/assets/images/projects/yang-liu-qing-mu-ban-nian-hua.jpg",
     locations: [
       { provinceCode: "tianjin", provinceName: "天津市", displayName: "天津", isPrimary: true },
     ],
@@ -5583,7 +5583,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "一根丝线劈作数十缕，在江南水乡的缎面上绣出猫的金瞳与鱼的银鳞。",
     briefIntroduction: "苏绣发源于江苏苏州一带，春秋时期已有雏形，明清时期臻于鼎盛，与湘绣、粤绣、蜀绣并称中国四大名绣。其特点是图案秀丽、构思巧妙、绣工细致、针法活泼、色彩清雅，以“平、齐、细、密、匀、顺、和、光”八字要诀概括工艺精髓。绣娘将一根花线劈成数十份细如毫发的丝线，运用平针、乱针、打籽等数十种针法，创造出双面绣、乱针绣等品类，题材涵盖花鸟、猫鱼、山水与人物。苏绣多次作为国礼走向世界。2006年入选第一批国家级非物质文化遗产名录，2008年、2014年、2021年又先后列入扩展名录。",
-    coverImage: "/assets/images/projects/su-xiu.svg",
+    coverImage: "/assets/images/projects/su-xiu.jpg",
     locations: [
       { provinceCode: "jiangsu", provinceName: "江苏省", cityName: "苏州市", displayName: "江苏苏州市", isPrimary: true },
     ],
@@ -5605,7 +5605,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "以针代笔、以线润色，湘绣把狮虎的毛发绣得根根欲动、呼之欲出。",
     briefIntroduction: "湘绣是以湖南长沙为中心、带有鲜明湘楚文化特色的刺绣总称，历史可追溯至两千多年前的春秋战国，长沙马王堆西汉墓出土的乘云绣、长寿绣等刺绣衣物，证明当时湖南刺绣已达很高水平。历代湘绣人应物施针，吸取苏绣、粤绣、京绣等绣系优点，创造出平面绣、织绣、网绣、扭绣、结绣五大类百余种针法。湘绣以画稿为蓝本，绣师“以针代笔、以线润色”，将传统绘画融于刺绣，人物、山水、花鸟皆生动逼真、质感强烈。其首创的“鬅毛针”法参差灵活，使狮虎猛兽毛发刚劲传神，“苏绣猫、湘绣虎”成为绣界共识，湘绣狮虎作品成为中国四大名绣中独有的形象标志。2006年入选第一批国家级非物质文化遗产名录。",
-    coverImage: "/assets/images/projects/xiang-xiu.svg",
+    coverImage: "/assets/images/projects/xiang-xiu.jpg",
     locations: [
       { provinceCode: "hunan", provinceName: "湖南省", cityName: "长沙市", displayName: "湖南长沙市", isPrimary: true },
     ],
@@ -5649,7 +5649,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "金线盘、银线绕，广绣潮绣双璧辉映，一针一线织出岭南的富丽与精巧。",
     briefIntroduction: "粤绣是广州刺绣（广绣）与潮州刺绣（潮绣）的合称，为中国四大名绣之一，历史可溯至唐代，明清时已成大宗出口商品。广绣以构图饱满、色彩浓艳、针法多变著称，善用“留水路”使纹样层次分明，多绣凤凰、牡丹、荔枝等吉庆题材；潮绣则以金银线垫绣闻名，以棉絮垫高纹样再覆金线，立体浮凸、金碧辉煌，多用于庙堂、戏服与婚庆。粤绣广泛装饰于戏服、帐幔、屏风和日用品，是岭南工艺的杰出代表。2006年列入第一批国家级非物质文化遗产名录，2021年又入选第五批扩展名录。",
-    coverImage: "/assets/images/projects/yue-xiu.svg",
+    coverImage: "/assets/images/projects/yue-xiu.jpg",
     locations: [
       { provinceCode: "guangdong", provinceName: "广东省", cityName: "广州市", displayName: "广东广州市", isPrimary: true },
       { provinceCode: "guangdong", provinceName: "广东省", cityName: "潮州市", displayName: "广东潮州市" },
@@ -5673,7 +5673,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "一针一线晕出巴蜀烟霞，芙蓉鲤鱼在缎面上活色生香。",
     briefIntroduction: "蜀绣又称川绣，是以四川成都为中心的传统刺绣工艺，与苏绣、湘绣、粤绣并称中国四大名绣，历史可追溯至汉代，晋代已誉满蜀中。蜀绣以软缎、彩丝为原料，针法多达百余种，讲究针脚平齐、线片光亮、掺色柔和，尤以晕针、铺针、滚针等针法见长。题材多取花鸟、虫鱼、山水、人物，芙蓉鲤鱼、熊猫等题材最具巴蜀特色。蜀绣技艺经师徒相传，绣品曾长期作为贡品与商品流通，是四川工艺美术的瑰宝。2006年入选第一批国家级非物质文化遗产名录，2008年又列入第一批扩展名录，重庆渝中区等地亦为其传承区域。",
-    coverImage: "/assets/images/projects/shu-xiu.svg",
+    coverImage: "/assets/images/projects/shu-xiu.jpg",
     locations: [
       { provinceCode: "sichuan", provinceName: "四川省", cityName: "成都市", displayName: "四川成都市", isPrimary: true },
     ],
@@ -6209,7 +6209,7 @@ export const bookProjects: HeritageProject[] = [
     level: "国家级非物质文化遗产",
     summary: "不打底稿、刀走龙蛇，白木之上雕出江南楼台烟雨。",
     briefIntroduction: "东阳木雕发源于浙江东阳，溯源自唐，发展于宋，鼎盛于明清，清代嘉道年间数百名艺人应召入京从事皇宫雕饰，民间“十里红妆”处处可见。东阳木雕以平面浮雕为主，采用散点透视构图，构图饱满、层次分明，有薄浮雕、深浮雕、镂空雕、多层叠雕等十余种技法，因选用樟木、椴木等浅色木材、雕后较少漆色，突出原木质感，又称“白木雕”。生产须经刷样、打轮廓线、脱地、分层次、细坯雕、修光等九道工序，题材涵盖人物山水、花鸟瑞兽，与青田石雕、黄杨木雕并称浙江三雕。2006年列入第一批国家级非物质文化遗产名录。",
-    coverImage: "/assets/images/projects/dong-yang-mu-diao.svg",
+    coverImage: "/assets/images/projects/dong-yang-mu-diao.jpg",
     locations: [
       { provinceCode: "zhejiang", provinceName: "浙江省", cityName: "东阳市", displayName: "浙江东阳市", isPrimary: true },
     ],
